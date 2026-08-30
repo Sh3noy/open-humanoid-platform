@@ -86,3 +86,80 @@ Two tracks, running in parallel, neither blocking the other:
    real R&D entry — log what the phone can and can't do (frame rate, latency,
    battery drain, which sensors are usable) the moment it exists, regardless
    of how the demand test turns out.
+
+---
+
+## 2026-08-30 — Plan revision: actuator-first, and repo scaffolding
+
+**Status:** in-progress (pre-hardware)
+
+**What was tried:**
+A more detailed strategic pass (recorded as `docs/comprehensive-report-2026-08.md`)
+replaced the original top-down thesis with a narrower, better-evidenced one,
+plus a quarter-by-quarter execution plan (`docs/18-month-plan.md`) and full
+build specs for the two hardware artefacts (`docs/v0-build-spec.md`,
+`docs/mass-market-kit-spec.md`). The repo was then scaffolded to match:
+top-level `README.md`, a software `LICENSE` (Apache-2.0), and placeholder
+`README.md` files in `cad/`, `electronics/`, `software/` describing what
+belongs in each and why they're still empty.
+
+**What happened:**
+The thesis changed materially. The original framing (2026-08-30, morning
+entry above) was "humanoid platform for India's e-waste/education angle,"
+gated by a 2-week demand test before any build spend. The revised framing is
+narrower and more defensible: **the actuator/joint standard is the product**,
+not the humanoid. Cross-checking prior art found CubeMars already ships ~6M
+actuator units/year and IPO'd in 2026 — global price competition on actuators
+is not winnable. What's left is an India-specific gap: non-Chinese
+provenance, open firmware, indigenous-content procurement eligibility, local
+support. The humanoid (v0) becomes a credibility/proof artefact, not the
+business; a ₹5,000 phone-brained desktop kit becomes the community/fleet/data
+layer, distributed through India's existing Atal Tinkering Labs network
+(10,000+ already have 3D printers and ₹20L grants, documented as underused).
+
+This also **superseded the original gating logic**. The prior entry's "2-week
+guerrilla demand test before any chassis/control R&D" gate was the founder's
+initially rejected recommendation, then reinstated informally by this revision
+— the new plan uses milestone-based gates instead (month 10 / 13 / 18, see
+`docs/18-month-plan.md`), not a pre-build demand test. This journal is the
+record of that change; treat the earlier entry's "Next step" as superseded,
+not deleted — the reasoning in it (OpenBot's non-commercialization, the
+unsolved bipedal-control risk) still holds and carried forward into the new
+plan's risk register.
+
+Repo scaffolding was added by an AI coding session (Claude Code) at the
+founder's request to "consolidate everything and develop this project."
+Deliberately did **not** create any placeholder CAD, wiring diagrams, or
+firmware — the build order in `docs/v0-build-spec.md` starts with physical,
+measured steps (one servo on a bench; weigh the printed leg before ordering
+more servos), and inventing engineering artifacts ahead of that would
+misrepresent guesses as data. `cad/`, `electronics/`, `software/` are empty
+except for READMEs stating what's supposed to land there.
+
+**Why (if it failed):** n/a — planning/documentation entry, not a build
+attempt.
+
+**Open questions this raises:**
+- Beachhead customer is still unresolved: defence/government procurement vs.
+  education vs. export, per the comprehensive report's open decisions section.
+  This is now flagged as possibly the most important open question in the
+  whole plan.
+- Product name is still blank.
+- First actuator SKU torque rating (15 Nm vs 35 Nm) not yet decided (report
+  leans 15 Nm).
+- Full-time vs. part-time founder commitment not yet decided — changes every
+  downstream timeline by ~50% and cuts Q5 (replication phase) if part-time.
+- ToddlerBot's hardware license (non-commercial?) and Berkeley Humanoid
+  Lite's license were both flagged as unverified in the build spec — neither
+  has actually been checked yet.
+- Whether "the mechanism worked for OpenBot and it still died" (a prior-art
+  warning already on record) applies just as hard to the actuator thesis, not
+  only the humanoid thesis, hasn't been separately stress-tested.
+
+**Next step:**
+Per `docs/18-month-plan.md` Q1: close a torque loop on a gimbal motor with an
+MA732 encoder and STM32G4 (M1, targeted month 2) — this is the first real
+hardware step and the next entry in this journal should report its actual
+result, not a plan. Incorporation (Pvt Ltd, not OPC) and T-Works access are
+parallel Q1 items with no build dependency. Verify the two open-source
+hardware licenses (ToddlerBot, Berkeley Humanoid Lite) before any CAD reuse.
