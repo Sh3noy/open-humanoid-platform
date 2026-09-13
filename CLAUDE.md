@@ -144,3 +144,7 @@ here — read the relevant one before making a call this file doesn't cover:
   comprehensive report. Useful for the "why" behind the project's earliest
   framing, but its specific plan (Approach C, the 2-week demand-test gate) has
   been superseded by the sequencing above.
+
+## Portfolio review (2026-09-13)
+
+This project was assessed alongside every other project in the workspace in `/root/PORTFOLIO-REVIEW-2026-09-13.md` (§5 for this one, plus the cross-cutting findings at the end). It records the verdict, the gaps, unused advantages, and the single cheapest next test. Read it before planning further here — in particular, if the next step is a founder-only action, do not plan past it.
