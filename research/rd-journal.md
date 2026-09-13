@@ -163,3 +163,55 @@ hardware step and the next entry in this journal should report its actual
 result, not a plan. Incorporation (Pvt Ltd, not OPC) and T-Works access are
 parallel Q1 items with no build dependency. Verify the two open-source
 hardware licenses (ToddlerBot, Berkeley Humanoid Lite) before any CAD reuse.
+
+---
+
+## 2026-08-30 — Verified ToddlerBot and Berkeley Humanoid Lite licenses
+
+**Status:** success
+
+**What was tried:**
+Checked both open-source reference projects' actual license files via the
+GitHub API (`gh api repos/hshi74/toddlerbot`,
+`gh api repos/HybridRobotics/Berkeley-Humanoid-Lite`, plus their READMEs) —
+these had been sitting as unverified assumptions since the initial plan
+revision earlier today, flagged in both the build spec and the comprehensive
+report as "appears non-commercial" / "never checked."
+
+**What happened:**
+- **ToddlerBot:** codebase is MIT (confirmed via repo's `license` field and
+  LICENSE file). Hardware design (Onshape document, STL files) is
+  **CC BY-NC-SA 4.0** — non-commercial only, confirmed directly from the
+  repo's README license section. The original guess was right: this CAD
+  cannot be used in a commercial product. Code (control, sim-to-real) is
+  still fair game to fork.
+- **Berkeley Humanoid Lite:** codebase is MIT. Hardware/"other assets" are
+  **CC BY-SA 4.0** — commercial use is permitted, attribution + share-alike
+  required. This is the better hardware reference of the two specifically
+  *because* its license doesn't block the actuator business — updated the
+  build spec and comprehensive report to prefer it over ToddlerBot wherever
+  both cover the same part (e.g. leg/gearbox design).
+- Note: the two Berkeley Humanoid Lite submodule repos
+  (`berkeley_humanoid_description`, `Berkeley-Humanoid-Lite-Lowlevel`) don't
+  carry a GitHub-detected license field of their own; the main repo's README
+  license statement was treated as covering them, but this wasn't checked
+  file-by-file inside the submodules — worth a closer look before actually
+  importing files from those specific submodules.
+
+**Why (if it failed):** n/a — verification succeeded, no blockers found.
+
+**Open questions this raises:**
+- Confirm the submodule-level license coverage (see note above) before
+  importing any specific file from `berkeley_humanoid_description` or
+  `Berkeley-Humanoid-Lite-Lowlevel`.
+- CC BY-SA 4.0 is share-alike — any derivative hardware design built from
+  Berkeley Humanoid Lite's CAD must itself be released under a compatible
+  share-alike license. Confirm this doesn't conflict with the project's own
+  intended CERN-OHL-W (both are copyleft-flavored, but compatibility between
+  a CC hardware license and CERN-OHL-W hasn't been checked).
+
+**Next step:**
+No blocker remains on the license front for starting hardware reference work.
+Proceed to M1 (torque loop on a gimbal motor) per the existing Q1 plan; when
+CAD work actually starts (build-spec step 2+), pull geometry/reference from
+Berkeley Humanoid Lite first, ToddlerBot's code (not CAD) second.

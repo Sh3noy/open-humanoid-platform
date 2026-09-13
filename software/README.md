@@ -13,9 +13,11 @@ tested. When that work starts, the planned pieces are:
 - **`v0/`** — ROS 2 workspace; MuJoCo/Isaac Lab sim model built to match the
   physical leg's measured response (not estimated dimensions — see the "weigh
   it before ordering" note in the build spec); the RL walking policy;
-  sim-to-real transfer code. Forked from ToddlerBot's codebase (MIT) — its
-  hardware license needs verifying separately before any CAD reuse, per the
-  build spec.
+  sim-to-real transfer code. Forked from ToddlerBot's codebase (MIT); its
+  hardware/CAD is CC BY-NC-SA 4.0 (non-commercial — confirmed 2026-08-30, do
+  not reuse its CAD here). Prefer Berkeley Humanoid Lite for hardware
+  reference instead — MIT code, CC BY-SA 4.0 hardware, commercial use
+  permitted. See the build spec and R&D journal for detail.
 - **`actuator-firmware/`** — FOC firmware for the STM32G4 + MA732 encoder
   joint, forked from moteus or ODrive, CAN-FD protocol implementing the
   published joint interface (spec not written until a working joint exists —

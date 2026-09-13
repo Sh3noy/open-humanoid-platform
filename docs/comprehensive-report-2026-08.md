@@ -57,7 +57,7 @@ They are not versions of each other. The v0 proves the technology, the actuator 
 
 **Why small:** at this scale torque is trivial, falls cost nothing, and iteration is cheap. ToddlerBot (0.56 m, 3.4 kg, 30 DOF, under $6,000 BOM) does cartwheels and its builders report it almost never breaks. Note this **inverts** the full-scale advice — at 1.5 m, skip legs; at 45 cm, legs are the affordable part.
 
-**Fork:** ToddlerBot's code (MIT) for control and sim-to-real; check its **hardware** licence before reusing CAD — it appears non-commercial. Berkeley Humanoid Lite (sub-$5,000, 3D-printed gearboxes) is the better reference for the actuator side — **verify its licence, which I never checked.**
+**Fork:** ToddlerBot's code (MIT) for control and sim-to-real. Its **hardware** licence is CC BY-NC-SA 4.0 (confirmed 2026-08-30) — non-commercial only, so its CAD cannot be reused for a commercial product; redraw the mechanical design. Berkeley Humanoid Lite (sub-$5,000, 3D-printed gearboxes) is the better reference for the actuator side — confirmed MIT code / CC BY-SA 4.0 hardware, which **does** permit commercial use. Prefer it over ToddlerBot for anything both repos cover.
 
 **Done means:** stands 60 s · walks 2 m · survives 20 falls unrepaired · sim policy transfers with no hand-tuned gains · someone else builds one from the repo without asking a question.
 
@@ -222,6 +222,6 @@ The 5 V adapter falls separately under CRS. Watch Scheme-X for industrial machin
 
 **Single-source, verify before quoting:** the "India imports 90% of core robotics components" figure traces to one outlet whose startup coverage doesn't corroborate elsewhere. Direction is well-supported; don't put the number in a deck without a NITI Aayog or IFR citation.
 
-**Not verified:** iDEX amounts, SAMRIDH, Genesis, Berkeley Humanoid Lite's licence, current ARTPARK call terms.
+**Not verified:** iDEX amounts, SAMRIDH, Genesis, current ARTPARK call terms. (Berkeley Humanoid Lite's and ToddlerBot's licences were verified 2026-08-30 — see §4 and the R&D journal.)
 
 **Estimates, not quotes:** all BOM figures, servo prices and the ₹7.4 lakh budget. Re-price before committing.

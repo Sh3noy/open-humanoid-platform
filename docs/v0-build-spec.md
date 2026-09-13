@@ -54,7 +54,9 @@ Prove it on the bench first. Once it holds position and tracks torque reliably, 
 
 ROS 2 for plumbing · MuJoCo or Isaac Lab for sim · RL walking policy trained in sim, transferred zero-shot · LeRobot for later imitation work · teleop rig for data collection.
 
-Fork ToddlerBot's codebase (MIT) for the low-level control and sim-to-real pipeline. Verify its **hardware** licence before reusing mechanical design — it appears to be non-commercial, in which case the CAD gets redrawn.
+Fork ToddlerBot's codebase (MIT) for the low-level control and sim-to-real pipeline. **Confirmed 2026-08-30 (via GitHub, see R&D journal): ToddlerBot's hardware design — Onshape document, STL files — is CC BY-NC-SA 4.0, non-commercial only.** Its CAD cannot be reused for a commercial product; redraw the mechanical design from scratch, using the code and published dimensions as reference only.
+
+Berkeley Humanoid Lite is the better reference for the actuator/leg side (sub-$5,000, 3D-printed gearboxes). **Confirmed 2026-08-30: code is MIT; hardware/other assets are CC BY-SA 4.0** — commercial use is permitted (attribution + share-alike required). Prefer this repo over ToddlerBot wherever both cover the same part, since its license doesn't block the actuator business.
 
 ## Done means
 
