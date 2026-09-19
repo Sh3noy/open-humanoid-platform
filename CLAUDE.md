@@ -148,3 +148,10 @@ here — read the relevant one before making a call this file doesn't cover:
 ## Portfolio review (2026-09-13)
 
 This project was assessed alongside every other project in the workspace in `/root/PORTFOLIO-REVIEW-2026-09-13.md` (§5 for this one, plus the cross-cutting findings at the end). It records the verdict, the gaps, unused advantages, and the single cheapest next test. Read it before planning further here — in particular, if the next step is a founder-only action, do not plan past it.
+
+## Shared services (added 2026-09-19)
+
+The tablet runs two self-hosted services, documented in `/root/CLAUDE.md` under "Self-hosted AI services". Run `ai-services status` to check them.
+- **Supermemory** at `http://127.0.0.1:6767` is shared long-term memory. This project's `containerTag` is **`open-humanoid-platform`**. Mirror R&D journal decisions into it so they can be searched across sessions. The journal file stays the source of truth.
+- **Octop** at `http://<tablet-ip>:8088` is the phone-facing assistant. Use it for capturing R&D-journal entries from the phone.
+- Claude Pro is the only AI subscription. Both services use a free-tier Gemini key (in `~/.supermemory/env`, never print it). Text saved to Supermemory goes to Gemini for extraction, so never store secrets. From Claude Code or Octop, reach Supermemory through the `supermemory-mcp` bridge (`supermemory_search` / `supermemory_add`).
