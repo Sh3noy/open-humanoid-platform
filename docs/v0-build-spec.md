@@ -46,9 +46,23 @@ Prove it on the bench first. Once it holds position and tracks torque reliably, 
 ## Electronics
 
 - **Compute:** Raspberry Pi 5 (8 GB) onboard. Mount pattern also accepts a Jetson Orin Nano for when vision goes on.
-- **Sensing:** 9-axis IMU (BNO085 or ICM-42688), one fisheye camera, foot contact switches under each sole.
+- **Sensing:** 9-axis IMU (BNO085 or ICM-42688), one fisheye camera, foot contact switches under each sole. An optional off-board room sense is described below; the robot does not carry it.
 - **Power:** 3S LiPo, 2200–3000 mAh. Direct to servo rail, buck to 5 V for the Pi.
 - **Off-board:** RTX 6000 Ada workstation for MuJoCo / Isaac Lab policy training. The robot runs inference only.
+
+### Ambient room sense (off-board, optional)
+
+Two or three ESP32-S3 boards fixed around the test space capture WiFi channel state information (CSI) — the amplitude and phase of the radio link between them, per subcarrier. A person moving or breathing in that space disturbs it. Software turns the disturbance into coarse room events, and the robot only subscribes to those events. **No CSI hardware rides on the robot** — see the limitation below and the R&D journal (2026-09-20).
+
+**What it adds.** The IMU and foot switches measure the robot's own body; the fisheye needs both light and line of sight. The room sense is the one input that says "someone is in the room" or "the room has gone still" with no line of sight, in the dark, and with no camera in the room. In v0 nothing acts on it (autonomy is not in v0): the events are logged alongside each test run.
+
+**How events reach the robot.** Nodes stream CSI over WiFi to a host on the same network — the training workstation or a spare Pi. The host publishes events (presence, motion and, if it survives testing, a breathing-rate estimate with a confidence value) over MQTT or UDP, and a small bridge republishes them as ROS 2 topics on the Pi 5's existing WiFi link. Where the signal processing runs — on the node or on the host — is undecided until it can be measured. Espressif's `esp-csi` (Apache-2.0) documents three ways to source CSI: from a router, between two nodes, or from a dedicated transmitter.
+
+**Cost.** ESP32-S3 dev boards were listed at ₹684–1,089 each by Indian retailers on 2026-09-20 (Quartz Components, Robocraze), so two to three nodes is roughly ₹1,400–3,300 in boards, before power supplies and mounts. This sits outside the ~₹71,000 budget below and adds no onboard compute. The "$9 node" in circulation is a price for a board, not for a working sense.
+
+**Known limitation:** the published evidence on ESP32-class hardware supports coarse presence and motion detection, and — in small controlled studies (the one ESP32 heart-rate result found used seven seated participants) — breathing and heart rate. It does not support pose: the ESP32-S3 is a single-antenna, 2.4 GHz-only part, while CMU's WiFi-DensePose used two routers with 3×3 antenna pairs, and its average precision fell from 43.5 to 27.3 when tested in a room layout it had not seen. Detectability also depends on where the person stands and which way they face. None of it has been measured in our room, so treat every capability here as a hypothesis until it is logged in the journal. The room sense is not a safety input and must never gate a walking trial or an e-stop.
+
+**Known limitation, onboard:** a node on the walking robot would see its own motion swamp the human signal, and compensating for that is an open research question — one recent paper handles it for human-proximity detection on mobile robots, and nothing found covers a biped or vital signs. It is deliberately not a v0 item.
 
 ## Software
 
@@ -69,7 +83,7 @@ Berkeley Humanoid Lite is the better reference for the actuator/leg side (sub-$5
 
 ## Explicitly not in v0
 
-Hands or dexterous manipulation · autonomy or navigation · speech · any cloud dependency · cosmetic shell · hot-swap battery.
+Hands or dexterous manipulation · autonomy or navigation · speech · any cloud dependency · cosmetic shell · hot-swap battery · WiFi sensing mounted on the robot.
 
 ## Build order
 

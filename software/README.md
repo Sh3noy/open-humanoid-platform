@@ -23,7 +23,17 @@ tested. When that work starts, the planned pieces are:
   published joint interface (spec not written until a working joint exists —
   see `../docs/18-month-plan.md` Q4).
 - **`kit-firmware/`** — ESP32 firmware: servo control, potentiometer-wiper
-  position readback, serial/BLE protocol. Apache-2.0.
+  position readback, serial/BLE protocol, and an optional, off-by-default
+  CSI-based presence event (see `../docs/mass-market-kit-spec.md`). Apache-2.0.
+- **`room-sense/`** — off-board WiFi CSI sensing for the v0 test space:
+  ESP32-S3 capture firmware built on Espressif's `esp-csi` (Apache-2.0), a
+  host-side service that turns CSI into presence/motion events and publishes
+  them over MQTT or UDP, and a ROS 2 bridge the robot subscribes through.
+  RuView (MIT) is a reference only until its claims are measured on our
+  hardware; do not depend on it, on ESPectre (GPLv3), or on the MM-Fi-trained
+  pose weights (non-commercial). See the R&D journal entry of 2026-09-20 for
+  the sourcing and licences. Nothing should be scaffolded here before an
+  ESP32-S3 is on a bench, producing CSI in the actual room.
 - **`kit-app/`** — Android app: face rendering, camera, wake word, speech,
   behaviour scripting, block-based + Python programming interfaces. Open
   source, intended for F-Droid.

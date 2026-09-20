@@ -72,6 +72,7 @@ Tier 1 is the flagship. Shipping electronics is cheap and robust; shipping print
 - **App (Android):** face rendering on screen, camera, wake word, speech in and out, behaviour scripting. Open source, on F-Droid.
 - **Programming:** block-based for beginners, Python over WiFi for the rest. The block editor is what makes it usable in Class 6.
 - **Languages:** Hindi, Telugu, Tamil, Bengali, Marathi at launch via Bhashini. This is a real moat — no imported kit will do it.
+- **Ambient presence (optional, off by default):** the kit's ESP32 samples WiFi channel state information (CSI) from the home or classroom router and reports "someone is near" / "they left" to the app over the existing serial/BLE protocol, so the phone can wake, greet and dim without running its camera. **No BOM change**: Espressif's `esp-csi` documents a mode where one ESP32 and an ordinary router are enough. A second node would add about ₹350 (the price of the kit's own ESP32 line) to a ~₹2,570 BOM for an optional feature, so the base kit stays single-board. Presence and motion only — no vitals, no pose. Built on `esp-csi` (Apache-2.0), not on ESPectre, which is GPLv3. It needs a WiFi router on the local network but no internet (rule 7). The argument for it here is not privacy — the phone is already a camera and a microphone — but darkness, a phone that can keep its camera off, and a classroom signal-processing project. **Untested on this board:** CSI capture shares the ESP32's WiFi radio with the Python-over-WiFi link and the servo loop, and whether they coexist at usable rates is unmeasured. The spec does not pin the ESP32 variant; Espressif documents CSI across its family, but that is their claim, not our measurement.
 
 ## Route to market
 
@@ -90,6 +91,7 @@ The printers are bought. The budget exists. The gap is a project worth running.
 - Hobby servos: audible, jittery, no torque sensing, gear wear within 12–24 months of heavy use.
 - Not a research platform. No sim-to-real transfer, no policy learning. That stays on v0.
 - Not a household assistant. It is a teaching object and a community-building object.
+- Room presence, if enabled, is a demo-grade feature: coarse presence and motion from one board and a router, unmeasured on this hardware, and dependent on where the router and the desk sit.
 
 ## What it's really for
 
