@@ -34,7 +34,7 @@ Three artefacts, not three versions of one thing:
   ladder, ESP32/PCA9685 electronics, the servo-potentiometer feedback hack,
   language localization plan) is in `docs/mass-market-kit-spec.md`.
 
-**Current state: pre-hardware, pre-code, pre-incorporation.** The repo is
+**Current state: pre-hardware, pre-code, OPC registration pending.** The repo is
 docs and scaffolding only — `research/rd-journal.md`, `docs/`, a top-level
 `README.md`, and empty `cad/`, `electronics/`, `software/` directories (each
 holding just a placeholder `README.md` describing what belongs there and why
@@ -52,10 +52,12 @@ reason; anything invented ahead of that misrepresents itself as real data.
 
 The 18-month plan (summarized in the comprehensive report, spelled out
 quarter-by-quarter in `docs/18-month-plan.md`) supersedes the earlier
-"2-week demand test before any build" framing from the original
-`/office-hours` design doc (see Full context below) — that doc's Approach C
-and "The Assignment" gate are historical context for how the project's
-thinking evolved, not the current plan. The current milestone sequence:
+"2-week demand test before any build" gate, which is kept only as history in
+the R&D journal. As decided 2026-09-25, Track 1 (the hardware build) is gated
+on grant applications: NIDHI-PRAYAS first, the Startup India Seed Fund once
+the OPC is registered. TiHAN was dropped as the primary track (its startup
+call needs a registered, incubated startup and targets navigation/UAV/6G/CPS,
+not actuators). Month 0 is 2026-09-25. The current milestone sequence:
 
 M1 torque loop closes (month 2) → M2 one leg tracks a trajectory (month 5) →
 M3 walks 2m unassisted (month 9) → M4 custom joint survives 100h under load
@@ -126,32 +128,16 @@ the earlier-considered OHL-S), docs under CC-BY-SA 4.0, trademark on the name
 and certification mark. Their license text hasn't been added yet — reproduce
 it from the actual license source when that happens, not from memory.
 
-Entity structure: Private Limited company (not OPC — can't take equity; not a
-dual Pvt Ltd + Section 8 structure either — over-engineered for a solo
-founder). Not yet incorporated.
+Entity structure (decided 2026-09-25): the venture sits under the founder's One
+Person Company (OPC), whose registration is in progress. Trade-off: an OPC
+cannot take equity investors; it can be converted to Private Limited later.
+No dual Pvt Ltd + Section 8 structure (over-engineered for a solo founder).
 
 ## Full context
 
-Two documents outside/inside this repo carry the reasoning that doesn't fit
-here — read the relevant one before making a call this file doesn't cover:
-
-- `docs/comprehensive-report-2026-08.md` (in-repo) — the current plan of
-  record: thesis, funding map, regulatory gates (BIS/CRS/DPDP/FCC Covered
-  List), risk register, and the open decisions not yet made (name, first SKU
-  torque rating, beachhead customer, full-time-vs-part-time).
-- `~/.gstack/projects/root/root-unknown-design-20260830-151046.md` (outside
-  repo) — the original `/office-hours` founder-diagnostic that preceded the
-  comprehensive report. Useful for the "why" behind the project's earliest
-  framing, but its specific plan (Approach C, the 2-week demand-test gate) has
-  been superseded by the sequencing above.
-
-## Portfolio review (2026-09-13)
-
-This project was assessed alongside every other project in the workspace in `/root/PORTFOLIO-REVIEW-2026-09-13.md` (§5 for this one, plus the cross-cutting findings at the end). It records the verdict, the gaps, unused advantages, and the single cheapest next test. Read it before planning further here — in particular, if the next step is a founder-only action, do not plan past it.
-
-## Shared services (added 2026-09-19)
-
-The tablet runs two self-hosted services, documented in `/root/CLAUDE.md` under "Self-hosted AI services". Run `ai-services status` to check them.
-- **Supermemory** at `http://127.0.0.1:6767` is shared long-term memory. This project's `containerTag` is **`open-humanoid-platform`**. Mirror R&D journal decisions into it so they can be searched across sessions. The journal file stays the source of truth.
-- **Octop** at `http://<tablet-ip>:8088` is the phone-facing assistant. Use it for capturing R&D-journal entries from the phone.
-- Claude Pro is the only AI subscription. Both services use a free-tier Gemini key (in `~/.supermemory/env`, never print it). Text saved to Supermemory goes to Gemini for extraction, so never store secrets. From Claude Code or Octop, reach Supermemory through the `supermemory-mcp` bridge (`supermemory_search` / `supermemory_add`).
+`docs/comprehensive-report-2026-08.md` is the current plan of record: thesis,
+funding map, regulatory gates (BIS/CRS/DPDP/FCC Covered List), risk register,
+and the open decisions not yet made (name, first SKU torque rating, beachhead
+customer, full-time-vs-part-time). The original founder-diagnostic design doc
+that preceded it lives outside this repo and is summarised in the
+2026-08-30 journal entries; its 2-week demand-test gate is superseded.

@@ -128,11 +128,11 @@ Two mechanisms worth copying: a **public ranked problem list** (RoboParty does t
 | M5 | Someone else builds one from the repo | Month 14 |
 | M6 | First actuators sold | Month 17 |
 
-**Q1** bench and one joint; incorporate; T-Works access; repo public while it's bad. **Q2** one leg on a rig; MuJoCo model matching hardware; apply PRAYAS. **Q3** walking, published same day as CAD and BOM. **Q4** joint reliability; publish interface spec v0.1; documentation. **Q5** three external builders; kit prototype; first 20 actuators. **Q6** revenue.
+**Q1** bench and one joint; NIDHI-PRAYAS application; DPIIT recognition once the OPC is registered; T-Works access; repo public while it's bad. **Q2** one leg on a rig; MuJoCo model matching hardware; PRAYAS decision. **Q3** walking, published same day as CAD and BOM. **Q4** joint reliability; publish interface spec v0.1; documentation. **Q5** three external builders; kit prototype; first 20 actuators. **Q6** revenue.
 
 **Not happening:** three SKUs · the full-size wheeled humanoid · a foundation · a large community · the kit before M3 (it is easier and more fun than the hard work, which is why it will eat the year).
 
-**Gates, pre-committed:**
+**Gates, pre-committed** (Month 0 = 2026-09-25, see `docs/18-month-plan.md`)**:**
 - **Month 10** — not walking? Cut arms and neck, drop to 12 DOF, ship the walk.
 - **Month 13** — joint can't survive 100 h? Buy actuators, become a robot company. A real outcome, not a failure.
 - **Month 18** — nobody bought an actuator? The component thesis is wrong for now; the kit and education business is the fallback and it's genuine.
@@ -154,14 +154,15 @@ Two mechanisms worth copying: a **public ranked problem list** (RoboParty does t
 | **IHFC, IIT Delhi** | varies | Cobotics hub — human-adjacent robots, i.e. your backdrivable-joint safety argument |
 | **IITM Pravartak** | varies | Charter area is sensors, networking, actuators and controls — literally your category |
 | **T-Works** | subsidised access | Telangana govt, 78,000 sq ft at Raidurg. Prototyping service or trained equipment access. solutions@tworks.in. Also T-Works × HDFC Parivartan for hardware startups |
-| **TiHAN, IIT Hyderabad** | ₹15–25 L | Autonomous navigation only — UAVs, ROVs, ground vehicles. **A humanoid joint is a stretch pitch.** I over-recommended this twice |
+| **Startup India Seed Fund Scheme** | Unverified — check current terms | Second grant step, once the OPC is registered and DPIIT-recognised. Routed through an approved incubator |
+| ~~TiHAN, IIT Hyderabad~~ | ~~₹15–25 L~~ | **Dropped as primary track (2026-09-25).** Its startup call needs a registered, incubated startup and focuses on autonomous navigation, UAV, 6G and CPS. A humanoid joint is a stretch pitch |
 | **RDI Scheme** | ₹1 Cr+ | Needs TRL 4+. 3–4% loans, 12–15 year tenure, up to 50% of project cost |
 | **DSIR recognition** | ongoing | Not a grant — customs duty exemption on imported research equipment. Cuts landed cost of every motor and encoder for years. Apply early |
 | **IndiaAI compute** | ₹65–92/GPU-hr | 38,000+ GPUs, up to 40% subsidy vs ₹300–600 commercial. **Wrong tool for RL sim-to-real** (iterative debug loop, and 48 GB Ada suffices); right tool later for VLA fine-tuning |
 
 **Unverified — treat as leads:** iDEX ₹1.5 crore · MeitY SAMRIDH · Genesis · T-Hub · TSIC. The ARTPARK ₹2 crore challenge figure is from a 2024 round.
 
-**Sequencing:** pick two — a PRAYAS Centre and ARTPARK — plus T-Works because it's local. Grant writing is a real tax. Everything else waits until M3, when a walking robot makes every application easier to write and easier to approve.
+**Sequencing (decided 2026-09-25):** NIDHI-PRAYAS now, through a PRAYAS Centre; the Startup India Seed Fund once the OPC is registered; ARTPARK as a strategic-fit lead; plus T-Works because it's local. Track 1 hardware spend is gated on these grant applications, not on the old demand test. Grant writing is a real tax. Everything else waits until M3, when a walking robot makes every application easier to write and easier to approve.
 
 **NM-ICPS was extended to December 2027.** Several hub programmes approach the end of their funded period; confirm call status with each hub directly, not via listing sites.
 
@@ -195,9 +196,9 @@ The 5 V adapter falls separately under CRS. Watch Scheme-X for industrial machin
 
 ## 13. Structure
 
-**Pvt Ltd.** Open source is a licensing decision about code and CAD; incorporation is about who invoices, imports and hires. Red Hat and Canonical are ordinary for-profit companies.
+**Decided 2026-09-25: open-humanoid sits under the founder's One Person Company (OPC).** Open source is a licensing decision about code and CAD; incorporation is about who invoices, imports and hires. Red Hat and Canonical are ordinary for-profit companies.
 
-**Not OPC** — a single-member company cannot take equity, and you will want to.
+**The trade-off, kept honest:** an OPC has a single member and cannot take equity investors, which this report earlier argued would be a problem ("you will want to"). It was chosen anyway because the OPC is already being registered, so no separate company is needed to start applying for grants. If outside equity is needed later, an OPC can be converted to a Private Limited company.
 
 **Not Section 8 as well** — I recommended a dual entity earlier and that was over-engineered for one person. Two boards, two audits, no benefit until external contributors need IP held neutrally. Add later, or never.
 
@@ -218,7 +219,7 @@ The 5 V adapter falls separately under CRS. Watch Scheme-X for industrial machin
 
 ## 15. Confidence
 
-**Well-sourced (government or primary):** the magnet scheme timeline, the FCC Covered List action, IndiaAI compute pricing, NIDHI-PRAYAS 2.0 amounts, TiHAN's scope, T-Works, ATL numbers, BIS toy and CRS requirements, and NM-ICPS hub assignments.
+**Well-sourced (government or primary):** the magnet scheme timeline, the FCC Covered List action, IndiaAI compute pricing, NIDHI-PRAYAS 2.0 amounts, TiHAN's scope (2026-09-25 decision: dropped), T-Works, ATL numbers, BIS toy and CRS requirements, and NM-ICPS hub assignments.
 
 **Single-source, verify before quoting:** the "India imports 90% of core robotics components" figure traces to one outlet whose startup coverage doesn't corroborate elsewhere. Direction is well-supported; don't put the number in a deck without a NITI Aayog or IFR citation.
 
