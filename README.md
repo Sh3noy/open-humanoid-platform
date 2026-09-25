@@ -45,6 +45,9 @@ belongs in each once the corresponding build step is real.
 - **[docs/mass-market-kit-spec.md](docs/mass-market-kit-spec.md)** — the
   ₹5,000 kit: design rules, BOM, 5-tier product ladder, electronics, the
   servo-potentiometer feedback hack, localization plan, ATL route to market.
+- **[builds/m1-bench-joint/](builds/m1-bench-joint/README.md)** — the plan for
+  the M1 bench joint: step-by-step build, parts to order (`BOM.md`) and lab
+  needs (`LAB.md`). A plan only; nothing is built yet.
 - **[research/rd-journal.md](research/rd-journal.md)** — the highest-value
   artifact in this repo. A dated log of what was tried, what worked, what
   failed, and why — updated at minimum quarterly. See its own header for the
@@ -69,6 +72,7 @@ doc for a human too.
 
 ```
 docs/         strategy, plans, and specs (populated)
+builds/       per-build plans, BOMs and lab needs (m1-bench-joint)
 research/     the R&D journal (populated)
 cad/          source CAD + exported STL/STEP (empty — starts at M1/M2)
 electronics/  wiring diagrams, India-sourceable BOM with alternates (empty)
