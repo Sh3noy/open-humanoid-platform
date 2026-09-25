@@ -1,7 +1,7 @@
 # M1 bench joint: bill of materials
 
 Prices are INR from the 2026-09-25 parts scout
-(`/root/firstmate/data/m1-parts-list/report.md`, sandbox web tools only).
+(web research, not published; sandbox web tools only).
 Evidence marks:
 
 - **V** = read from a fetched product page on 2026-09-25.
