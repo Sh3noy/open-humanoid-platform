@@ -1,6 +1,8 @@
 # 18-Month Plan
 
-**Assumes:** one to two people, bootstrapped, Hyderabad. If this is part-time alongside other work, add roughly 50% to every timeline and cut Q5 entirely.
+**Month 0 = 2026-09-25**, the date the entity and grant decisions below were made. Month N ends on the 25th of the calendar month N months later (Month 10 = 2027-07-25, Month 13 = 2027-10-25, Month 18 = 2028-03-25). The gates in this plan are measured from this date.
+
+**Assumes:** one to two people, funded by grants and the founder's own money, Hyderabad. If this is part-time alongside other work, add roughly 50% to every timeline and cut Q5 entirely.
 
 ---
 
@@ -24,9 +26,10 @@ M3 is the one that unlocks everything else — grants, contributors, attention. 
 ## Q1 · Months 1–3 — Bench
 
 - Close a torque loop on a gimbal motor with MA732 encoder and STM32G4. **(M1)**
-- Incorporate as Pvt Ltd — **not** OPC. Register for DPIIT recognition.
+- Run open-humanoid as a venture of the founder's One Person Company (OPC), whose registration is in progress. Register for DPIIT recognition once the OPC exists. Trade-off, stated plainly: an OPC has a single member and cannot take equity investors. If outside equity is ever needed, the OPC can be converted to a Private Limited company, and this venture can move with it.
+- Prepare and submit the NIDHI-PRAYAS application (see Grant calendar).
 - T-Works membership for printer and workshop access.
-- Repo public from week one, while it's still bad. Licence files in place: CERN-OHL-W hardware, Apache-2.0 firmware.
+- Repo public from week one, while it's still bad. Licence files: Apache-2.0 is in place; CERN-OHL-W (hardware) and CC BY-SA 4.0 (docs) still to add, with the licence text in hand.
 - Print one leg. **Weigh it before ordering the remaining servos** — the leg torque class depends on actual mass, not estimated.
 
 **Ships:** video of a motor holding position against hand pressure.
@@ -36,7 +39,7 @@ M3 is the one that unlocks everything else — grants, contributors, attention. 
 - 6-DOF leg on a test rig, tracking commanded trajectories. **(M2)**
 - MuJoCo model that matches the physical leg's response.
 - Custom joint rev 2: add the planetary stage, characterise on a simple dyno.
-- Apply NIDHI-PRAYAS (₹10 L).
+- NIDHI-PRAYAS decision expected; if approved, work moves onto grant milestones.
 
 **Ships:** side-by-side video, sim leg and real leg doing the same motion.
 
@@ -55,7 +58,7 @@ M3 is the one that unlocks everything else — grants, contributors, attention. 
 - Swap it into shoulder yaw on the robot.
 - Publish **joint interface spec v0.1** — mounting pattern, 48 V CAN-FD, protocol. Not before now: a spec with no working implementation behind it is noise.
 - Complete build documentation to the standard that a stranger can follow.
-- Apply to TiHAN (IIT Hyderabad) and the DST indigenous-supply-chain challenge.
+- Apply to the DST indigenous-supply-chain challenge (figures unverified).
 
 **Ships:** an interface spec and a joint that doesn't die.
 
@@ -100,11 +103,11 @@ M3 is the one that unlocks everything else — grants, contributors, attention. 
 | Incorporation, compliance, misc | 50,000 |
 | **Total, 18 months, excluding salary** | **~7,40,000** |
 
-NIDHI-PRAYAS alone covers most of this if it lands in Q2.
+A NIDHI-PRAYAS grant (₹20 L via a PRAYAS Centre in the PC category, per the comprehensive report) would cover this budget with room to spare. Grant funding is a bet, not a given. Without it, the founder self-funds only the first two lines and the rest waits.
 
 ## Gates
 
-Pre-commit to these now, while it's easy to be honest.
+Pre-commit to these now, while it's easy to be honest. The earlier "2-week demand test before any build" gate is retired (see the R&D journal, 2026-09-25).
 
 **Gate 1 — Month 10.** If it isn't walking, the problem is scope, not skill. Cut the arms and neck, drop to 12 DOF, ship the walk.
 
@@ -114,11 +117,14 @@ Pre-commit to these now, while it's easy to be honest.
 
 ## Grant calendar
 
+Track 1 (the hardware build) is gated on grant applications, not on a demand test. NIDHI-PRAYAS goes first because it does not need a registered company. The Startup India Seed Fund follows once the OPC is registered and DPIIT-recognised. TiHAN was dropped as a primary track on 2026-09-25: its startup call needs a registered, incubated startup and focuses on autonomous navigation, UAV, 6G and CPS, not actuators.
+
 | When | What | Size |
 |---|---|---|
-| Q1 | T-Works membership, DPIIT recognition | — |
-| Q2 | NIDHI-PRAYAS | ₹10 L |
-| Q4 | TiHAN (IIT Hyderabad), DST indigenous supply chain | ₹15–50 L |
+| Q1 | Submit NIDHI-PRAYAS via a PRAYAS Centre; T-Works membership | ₹20 L (PC) / ₹40 L (APC) |
+| Q1 | DPIIT recognition (after OPC registration) | — |
+| Q2 | Startup India Seed Fund Scheme, via an approved incubator (needs registered OPC; check current terms) | Unverified |
+| Q4 | DST indigenous supply chain | Unverified |
 | Q4 | DSIR recognition — customs duty exemption on imported research equipment | ongoing benefit |
 | Q6 | RDI scheme (needs TRL 4+), or seed | ₹1 Cr+ |
 

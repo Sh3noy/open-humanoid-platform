@@ -21,7 +21,7 @@ structurally can't or won't rely on that supply chain.
 
 ## Where things stand
 
-Pre-hardware, pre-code, pre-incorporation. Nothing has been printed, wired,
+Pre-hardware, pre-code, OPC registration pending. Nothing has been printed, wired,
 or flashed yet — see the build order in `docs/v0-build-spec.md`, which
 deliberately starts with a single servo on a bench, not a finished robot.
 Fabricating CAD, firmware, or simulation models ahead of that physical
@@ -38,7 +38,7 @@ belongs in each once the corresponding build step is real.
   open decisions.
 - **[docs/18-month-plan.md](docs/18-month-plan.md)** — the same plan, spelled
   out quarter by quarter: milestones, budget line items, pre-committed gates
-  (month 10 / 13 / 18), grant calendar.
+  (month 10 / 13 / 18), grant calendar (NIDHI-PRAYAS first, Seed Fund after OPC registration).
 - **[docs/v0-build-spec.md](docs/v0-build-spec.md)** — the 45cm prototype:
   physical dimensions, 22-DOF breakdown, actuation classes, electronics,
   software stack, "done means" checklist, build order, BOM.
@@ -55,6 +55,8 @@ for an AI coding agent picking up this repo cold — useful as an orientation
 doc for a human too.
 
 ## Milestones (the spine of the 18-month plan)
+
+Month 0 = 2026-09-25. Open-humanoid is run under the founder's One Person Company (an OPC cannot take equity; it can be converted to Pvt Ltd later). Track 1 hardware is gated on grant applications (NIDHI-PRAYAS first, then the Startup India Seed Fund once the OPC is registered), not on a demand test.
 
 | # | Milestone | By |
 |---|---|---|

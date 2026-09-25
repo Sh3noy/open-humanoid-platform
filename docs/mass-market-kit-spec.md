@@ -59,10 +59,12 @@ Street prices, Indian suppliers, quantity one. Expect 25–35% lower at 500 unit
 | Tier | What ships | ₹ |
 |---|---|---|
 | **0 — Files** | CAD, BOM, firmware, app. Source everything yourself. | Free |
-| **1 — Electronics envelope** | Servos, ESP32, driver, harness, adapter. You print or cut the body. | 1,999 |
+| **1 — Electronics envelope** | Servos, ESP32, driver, harness, adapter. You print or cut the body. | 2,999 |
 | **2 — Full kit** | Everything, printed parts included. | 4,999 |
-| **3 — Cardboard kit** | Electronics + die-cut corrugated body. No printer needed. | 2,499 |
-| **4 — School pack** | 10 × Tier 1 + teacher guide + curriculum | 17,999 |
+| **3 — Cardboard kit** | Electronics + die-cut corrugated body. No printer needed. | 3,499 |
+| **4 — School pack** | 10 × Tier 1 + teacher guide + curriculum | 27,999 |
+
+Tier prices are checked against the BOM above at quantity one. Tier 1 electronics cost about ₹2,290 (servos 1,440 + ESP32 350 + driver 150 + adapter 300 + roughly 50 of harness), so ₹2,999 leaves a thin margin before shipping. Tier 3 adds an estimated ₹150–200 of die-cut cardboard (unquoted). Tier 4 is 10 × Tier 1 (about ₹22,900) plus printed guides. The earlier prices (₹1,999 / ₹2,499 / ₹17,999) sat below their own BOM and were corrected on 2026-09-25. At 500 units, BOM is expected to fall 25–35% (Tier 1 to roughly ₹1,600), which would allow lower prices later; the first 20 seed kits are quantity one. Prices are targets, not quotes.
 
 Tier 1 is the flagship. Shipping electronics is cheap and robust; shipping printed plastic across India is neither.
 

@@ -7,7 +7,7 @@ something was tried and failed, say what was tried, why it failed, and what
 you'd try next. A future builder inheriting this project should be able to
 skip our mistakes instead of repeating them.
 
-See the design doc for full context: `~/.gstack/projects/root/root-unknown-design-20260830-151046.md`.
+The original founder-diagnostic design doc that preceded the plan lives outside this repo; its conclusions are summarised in the 2026-08-30 entries below.
 
 ## How to use this journal
 
@@ -160,13 +160,15 @@ attempt.
 Per `docs/18-month-plan.md` Q1: close a torque loop on a gimbal motor with an
 MA732 encoder and STM32G4 (M1, targeted month 2) — this is the first real
 hardware step and the next entry in this journal should report its actual
-result, not a plan. Incorporation (Pvt Ltd, not OPC) and T-Works access are
+result, not a plan. Entity setup (Pvt Ltd, not OPC at the time; reversed 2026-09-25, see below) and T-Works access are
 parallel Q1 items with no build dependency. Verify the two open-source
 hardware licenses (ToddlerBot, Berkeley Humanoid Lite) before any CAD reuse.
 
 ---
 
 ## 2026-08-30 — Verified ToddlerBot and Berkeley Humanoid Lite licenses
+
+> **Date correction (added 2026-09-25):** this entry was committed on 2026-09-13, not 2026-08-30 (the 2026-08-30 commit still calls both licences unverified). The heading keeps its original date because the build spec and report cite it; treat **2026-09-13** as the date the check was recorded. Whether the check itself was run earlier is not known.
 
 **Status:** success
 
@@ -215,6 +217,33 @@ No blocker remains on the license front for starting hardware reference work.
 Proceed to M1 (torque loop on a gimbal motor) per the existing Q1 plan; when
 CAD work actually starts (build-spec step 2+), pull geometry/reference from
 Berkeley Humanoid Lite first, ToddlerBot's code (not CAD) second.
+
+---
+
+## 2026-09-25 — Decisions: OPC entity, grant-gated Track 1, plan docs aligned
+
+**Status:** success (decisions made; docs updated to match)
+
+**What was tried:**
+A doc audit (2026-09-19) found the plan of record contradicting itself and the founder's other notes on three points: entity (Pvt Ltd vs OPC), whether the 2-week demand test was still the gate, and whether TiHAN was a fit. It also found kit tier prices below their own BOM, no Month 0 date, stale repo metadata, and this journal missing the decisions from the 2026-09-13 portfolio review.
+
+**What happened:**
+- **Entity:** open-humanoid sits under the founder's One Person Company. This reverses the earlier "Pvt Ltd, not OPC" call. The known cost: an OPC cannot take equity investors; converting to Pvt Ltd later is possible.
+- **Gate:** Track 1 (hardware build) is gated on grant applications, not on the 2-week demand test. The demand test is retired; the 2026-08-30 entries keep it as history.
+- **Grants:** NIDHI-PRAYAS first (₹20 L PC / ₹40 L APC, replacing the plan's stale ₹10 L); Startup India Seed Fund once the OPC is registered. TiHAN dropped as the primary track: its startup call needs a registered, incubated startup and focuses on autonomous navigation, UAV, 6G and CPS, not actuators.
+- **2026-09-13 portfolio review** (an internal workspace review, not in this repo) reached the verdict "park hardware, build the grant application". That was not logged at the time; this entry records it. It is what the grant-gated decision above follows from.
+- **Month 0** set to 2026-09-25 (proposed by the docs pass; the founder can move it). Gates in `docs/18-month-plan.md` now have dates.
+- Kit Tier 1/3/4 prices raised so each exceeds its BOM at quantity one.
+
+**Why (if it failed):** n/a, decision entry.
+
+**Open questions this raises:**
+- Does the Seed Fund's current eligibility fit an OPC-held venture? Terms are unverified.
+- A PRAYAS Centre has not been chosen.
+- Nothing in Q1 (M1 torque loop, licence files, T-Works) has started as of this entry; the Q1 gate dates now run from Month 0.
+
+**Next step:**
+Draft the NIDHI-PRAYAS application; verify Seed Fund terms once the OPC is registered.
 
 ---
 
