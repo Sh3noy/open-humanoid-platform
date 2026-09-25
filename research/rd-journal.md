@@ -471,3 +471,50 @@ manual log or PIR ground truth, using `esp-csi` (not RuView's numbers), and
 record what it cannot detect. Until then this sense is a documented option:
 it changes no done-means criterion, no milestone and no budget line in
 `docs/18-month-plan.md`.
+
+---
+
+## 2026-09-25 — M1 bench joint: parts and firmware chosen (planned, not bought)
+
+**Status:** in-progress
+
+**What was tried:**
+A desk-research parts scout for the M1 bench joint (plan in
+`builds/m1-bench-joint/`). Web pages only; nothing ordered, nothing built,
+no seller contacted. Several shop pages returned 403, so most prices come from
+search snippets and are marked as such in `builds/m1-bench-joint/BOM.md`.
+
+**What happened:**
+Chosen kit: GB2208 gimbal motor (Robokits, Rs 2,474, page read), MT6701
+magnetic encoder module with magnet (about Rs 300-500, estimate), ST
+B-G431B-ESC1 (STM32G431 + driver + current sense + onboard ST-LINK, about
+Rs 4,600 from a TME India snippet), SimpleFOC firmware (MIT). Total about
+Rs 7,500 before bench PSU and mount, about Rs 1,500 over the Rs 6,000 custom-joint
+budget line.
+- **MT6701 over MA732:** the v0 spec names MA732, but no Indian listing for an
+  MA732 breakout was found, while MT6701 modules are listed by Indian sellers
+  and SimpleFOC has an MT6701 discussion and support. MT6701 is a listed
+  alternative in the brief. Its accuracy on our motor is untested.
+- **SimpleFOC for M1, moteus later:** SimpleFOC (MIT) has documented support
+  for the B-G431B-ESC1 and is the quickest route to the hold-position video.
+  moteus (Apache-2.0 per a snippet, to verify) targets mjbots hardware and
+  fits the CAN-FD actuator plan better, but porting it to this board is real
+  work (pin map, driver, current sense). Use moteus as the reference for the
+  actuator protocol from M2 onward and record the port cost when it is tried.
+
+**Why (if it failed):** n/a, nothing has been tried on hardware.
+
+**Open questions this raises:**
+- Accept the roughly Rs 1,500 overrun, or get a delivered Mouser/DigiKey
+  quote first? The TME price conflicts with import snippets.
+- B-G431B-ESC1 supply range, current rating and CAN transceiver type are from
+  memory and unverified.
+- Motor pole pairs and phase resistance are unconfirmed.
+- Can the Android tablet flash the ST-LINK at all? Untested; laptop is the plan.
+- Does the ESC1's current-sense path give usable torque-loop quality under
+  SimpleFOC? This is what M1 tests.
+- Bench PSU, mount and lab tools are unpriced (`builds/m1-bench-joint/LAB.md`).
+
+**Next step:**
+Verify the datasheet values, get real prices from a cart, decide the budget,
+then order and follow the build plan in `builds/m1-bench-joint/README.md`.
